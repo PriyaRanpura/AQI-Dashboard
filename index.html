@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChemiAir Sense Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="homepage-header">
+    <div class="header-left">
+      <img src="D:\PRIYA\TYSS GSFC\Minor PRoject\project_website\gsfc_logo_.png" alt="ChemAir Sense Logo" class="logo large-logo" />
+      <h1 class="site-title large-title">AIR QUALITY INDEX OF ANVIKSHA BUILDING</h1>
+    </div>
+  </header>
+
+  <svg style="display: none;">
+    <defs>
+      <linearGradient id="heatmap-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#2ecc71" />    <!-- Green -->
+        <stop offset="50%" stop-color="#f1c40f" />   <!-- Yellow -->
+        <stop offset="100%" stop-color="#e74c3c" />  <!-- Red -->
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="scrollable">
+    <marquee behavior="scroll" direction="left">MADE BY: MAHEK MOJIDRA | HIRAL CHHATRAPATI | PRIYA RANPURA | UNNATI VALAND</marquee>
+  </div>
+  
+  <main>
+    <div class="gauge-grid">
+
+    <a href="gas-detail.html?gas=so2" class="svg-gauge-container">
+      <h1>SO₂</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-so2" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-so2">--</span> ppm</p>
+    </a>
+
+
+    <a href="gas-detail.html?gas=nox" class="svg-gauge-container">
+      <h1>NOx</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-nox" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-nox">--</span> ppm</p>
+    </a>
+
+    <a href="gas-detail.html?gas=co" class="svg-gauge-container">
+      <h1>CO</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-co" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-co">--</span> ppm</p>
+    </a>
+
+
+    <a href="gas-detail.html?gas=methane" class="svg-gauge-container">
+      <h1>Methane</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-methane" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-methane">--</span> ppm</p>
+    </a>
+    
+    <div class="svg-gauge-container">
+      <h1>Temperature</h1>
+      <p class="reading-text" id="temperature">-- °C</p>
+      <div class="temp-bar">
+        <div class="temp-gradient"></div>
+        <div class="temp-marker" style="left: 60%;"></div>
+      </div>
+    </div>
+    
+    <div class="svg-gauge-container">
+      <h1>Humidity</h1>
+      <p class="reading-text" id="humidity">-- %</p>
+      <div class="humidity-container">
+        <div class="droplet">
+          <div class="fill" style="height: 70%;"></div>
+        </div>
+      </div>
+    </div>
+    
+
+    <br><br>
+    <a href="gas-detail.html?gas=ammonia" class="svg-gauge-container">
+      <h1>Ammonia</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-ammonia" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-ammonia">--</span> ppm</p>
+    </a>
+    
+
+    <a href="gas-detail.html?gas=co2" class="svg-gauge-container">
+      <h1>CO₂</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-co2" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-co2">--</span> ppm</p>
+    </a>
+    
+
+    <a href="gas-detail.html?gas=hydrogen" class="svg-gauge-container">
+      <h1>Hydrogen</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-hydrogen" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-hydrogen">--</span> ppm</p>
+    </a>
+    
+
+    <a href="gas-detail.html?gas=benzene" class="svg-gauge-container">
+      <h1>Benzene</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-benzene" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-benzene">--</span> ppm</p>
+    </a>
+    
+
+    <a href="gas-detail.html?gas=lpg" class="svg-gauge-container">
+      <h1>LPG</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-lpg" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-lpg">--</span> ppm</p>
+    </a>
+    
+
+    <a href="gas-detail.html?gas=butane" class="svg-gauge-container">
+      <h1>Butane</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-butane" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-butane">--</span> ppm</p>
+    </a>
+     
+
+    <a href="gas-detail.html?gas=naturalgas" class="svg-gauge-container">
+      <h1>Natural Gas</h1>
+      <svg viewBox="0 0 200 100" class="svg-gauge">
+        <path d="M10 100 A90 90 0 0 1 70 25" stroke="#2ecc71" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M70 25 A90 90 0 0 1 130 25" stroke="#f1c40f" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <path d="M130 25 A90 90 0 0 1 190 100" stroke="#e74c3c" stroke-width="20" fill="none" stroke-linecap="round"/>
+        <polygon id="pointer-naturalgas" points="95,100 105,100 100,15" fill="#222" stroke="white" stroke-width="2" />
+      </svg>
+      <p class="reading-text"><span id="value-naturalgas">--</span> ppm</p>
+    </a>
+    
+    
+</div>
+  </main>
+  <footer><button id="download-btn">📥 Download All Data</button></footer>
+  <script src="script.js"></script>
+</body>
+</html>
